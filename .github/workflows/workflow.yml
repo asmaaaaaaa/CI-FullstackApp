@@ -30,21 +30,21 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: latest
+          node-version: ${{ matrix.node-version }}
 
       # Install the dependencies.
       - name: Install Dependencies
-        run: npm install --legacy-peer-deps
+        run: cd backend && npm ci
 
 
       # Run the tests.
       - name: Test
-        run: npm run test
+        run: cd backend && npm test
 
 
       # Run the linter.
       - name: Run Linting
-        run: npm run lint
+        run: cd backend && npm run lint
 
       # Send a console message at completion.
       - run: |
