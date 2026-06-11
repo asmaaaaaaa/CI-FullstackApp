@@ -34,7 +34,7 @@ jobs:
 
       # Install the dependencies.
       - name: Install Dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
 
       # Run the tests.
